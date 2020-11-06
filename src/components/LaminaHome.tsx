@@ -11,6 +11,7 @@ export const LaminaHome:FC = () => {
   
     useEffect(()=>{
         stockScheme.fetchStocks(10);
+        stockScheme.fetchUsers(10);
     },[])
     
     return  <Layout>

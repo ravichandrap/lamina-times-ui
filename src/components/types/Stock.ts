@@ -10,4 +10,15 @@ export interface Stock {
     avgPrice: number;
     ltp: number;
     currentPrice: number;
+    dayPl:number,
+    dayPlPercentage:number,
+    overallPl:number,
+    overallPlPercentage:number,
+    investment:number,
+    links: Links[]
+}
+
+interface Links {
+    rel:string;
+    href:string
 }

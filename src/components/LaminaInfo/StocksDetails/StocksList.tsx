@@ -11,10 +11,14 @@ export const StocksList:FC<{stock:Stock[]}> = ({stock}) => {
             <td>Name</td>
             <td>symbol</td>
             <td>date</td>
-            <td>Code</td>
-            <td>Current Price</td>
             <td>Net Qty</td>
+            <td>Current Price</td>
             <td>Avg Price</td>
+            <td>dayPl</td>
+            <td>dayPlPercentage</td>
+            <td>overallPl</td>
+            <td>overallPlPercentage</td>
+            <td>investment</td>
             </tr>
         {loadStocks}
     </table>

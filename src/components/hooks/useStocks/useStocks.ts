@@ -3,6 +3,7 @@ import {StockScheme } from '../../types/StockScheme';
 import { modelReducer } from './reducer/reducer';
 import {getInitialState } from '../utils/getInitialState';
 import {fetchStocks} from '../../api/stock/fetchStocks'
+import {fetchUsers} from '../../api/stock/fetchUsers'
 
 const initialState = getInitialState();
 export function useStocks():  StockScheme {
@@ -12,6 +13,9 @@ export function useStocks():  StockScheme {
         ...state,
         fetchStocks(user_id: number) {
             fetchStocks(user_id, dispatch); 
+        },
+        fetchUsers(user_id: number) {
+            fetchUsers(user_id, dispatch); 
         }
     }
 }

@@ -1,9 +1,18 @@
 import {Stock} from './Stock'
-import {SET_STOCKS, IS_LOADING, REQUEST_ERROR} from '../hooks/utils/constants'
+import {User} from './User'
+import {SET_STOCKS, 
+    IS_LOADING, 
+    REQUEST_ERROR,
+    SET_USERS} from '../hooks/utils/constants'
 
 interface SetSharesAction {
     type: typeof SET_STOCKS;
     stocks: Stock[]
+}
+
+interface SetUsersAction {
+    type: typeof SET_USERS;
+    users: User[]
 }
 
 interface SetErrorAction {
@@ -18,5 +27,6 @@ interface IsLoading {
 export type StocksAction = 
             SetSharesAction |
             SetErrorAction |
-            IsLoading 
+            IsLoading |
+            SetUsersAction
 
