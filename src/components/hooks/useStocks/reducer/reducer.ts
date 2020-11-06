@@ -9,7 +9,6 @@ export function modelReducer(
 
     switch(action.type) {
         case SET_STOCKS: 
-        console.log("model reducer ,", action.stocks);
         
         return {
             ...state,
