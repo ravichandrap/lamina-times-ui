@@ -3,7 +3,10 @@ import {User} from './User'
 import {SET_STOCKS, 
     IS_LOADING, 
     REQUEST_ERROR,
-    SET_USERS} from '../hooks/utils/constants'
+    SET_USERS,
+SET_CURRENT_PAGE,
+PAGE_HOME
+} from '../utils/constants'
 
 interface SetSharesAction {
     type: typeof SET_STOCKS;
@@ -24,9 +27,15 @@ interface IsLoading {
     type: typeof IS_LOADING;
   }
 
+interface SetCurrentPage {
+    type: typeof SET_CURRENT_PAGE;
+    currentPage: string;
+}
+
 export type StocksAction = 
             SetSharesAction |
             SetErrorAction |
             IsLoading |
-            SetUsersAction
+            SetUsersAction |
+            SetCurrentPage
 

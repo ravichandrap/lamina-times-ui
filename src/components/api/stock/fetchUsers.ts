@@ -1,9 +1,9 @@
 import { Dispatch } from "react";
 import { StocksAction } from "../../types/StocksAction";
-import { REQUEST_ERROR, IS_LOADING, SET_STOCKS } from '../../hooks/utils/constants'
+import { REQUEST_ERROR, IS_LOADING, SET_USERS } from '../../utils/constants'
 import { getEnvironmentVariables } from '../../utils/getEnvironmentVariables'
-import { Stock } from "../../types/Stock";
 import axios, { AxiosResponse } from 'axios';
+import { User } from "../../types/User";
 
 const { BASE_URL } = getEnvironmentVariables();
 
@@ -19,10 +19,10 @@ export async function fetchUsers(
     try {
         dispatch({ type: IS_LOADING })
         const url = getURL(user_id);
-        const { data }: AxiosResponse<Stock[]> = await axios.get(url);
-        console.log("axios: data: ",data);
-        
-        //dispatch({ type: SET_STOCKS, stocks: data })
+        const { data }: AxiosResponse<User[]> = await axios.get(url);
+        console.log("axios: data: ", data);
+
+        dispatch({ type: SET_USERS, users: data })
     } catch (console) {
         dispatch({ type: REQUEST_ERROR, error: console.message })
     }

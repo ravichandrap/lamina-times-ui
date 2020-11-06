@@ -1,12 +1,13 @@
-import React, {FC} from 'react';
+import React, { FC, useContext } from 'react';
+import { LaminaContext } from '../../hooks/context/LaminaProvider';
 import { Stock } from '../../types/Stock';
 import { StocksRow } from './StocksRow';
 
-export const StocksList:FC<{stock:Stock[]}> = ({stock}) => {
-     
-    const loadStocks = stock.map(s=><StocksRow stock={s}/>)
+export const StocksList: FC = () => {
+    const {stocks} = useContext(LaminaContext);
+    const loadStocks = stocks.map(s => <StocksRow stock={s} />)
     return <table width="100%">
-            <tr>
+        <tr>
             <td>ID</td>
             <td>Name</td>
             <td>symbol</td>
@@ -19,7 +20,7 @@ export const StocksList:FC<{stock:Stock[]}> = ({stock}) => {
             <td>overallPl</td>
             <td>overallPlPercentage</td>
             <td>investment</td>
-            </tr>
+        </tr>
         {loadStocks}
     </table>
 }
